@@ -27,3 +27,5 @@ author-*.tar
 
 # Elixir Language Server output
 .elixir-ls/
+
+node_modules/

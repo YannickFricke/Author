@@ -1,0 +1,12 @@
+{
+  "name": "@yannickfricke/author",
+  "version": "0.0.0",
+  "repository": "git@github.com:YannickFricke/Author.git",
+  "author": "Yannick Fricke <yannickfricke@googlemail.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "nodemon": "^2.0.13",
+    "rimraf": "^3.0.2"
+  }
+}
