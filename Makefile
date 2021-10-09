@@ -27,7 +27,7 @@ install:
 	npm install
 
 ci:
-	npm i -g npm
+	sudo npm i -g npm
 	make install test inspect
 
 clean-build:
