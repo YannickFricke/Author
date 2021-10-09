@@ -7,7 +7,17 @@ defmodule Author.MixProject do
       version: "0.0.0",
       elixir: "~> 1.12",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+
+      # Docs related stuff
+      name: "Author",
+      source_url: "https://github.com/YannickFricke/Author",
+      homepage_url: "https://github.com/YannickFricke/Author",
+      docs: [
+        # The main page in the docs
+        main: "Author",
+        extras: ["README.md"]
+      ]
     ]
   end
 
@@ -23,7 +33,8 @@ defmodule Author.MixProject do
   defp deps do
     [
       {:type_check, "~> 0.8.0"},
-      {:credo, "~> 1.5", only: [:dev, :test], runtime: false}
+      {:credo, "~> 1.5", only: [:dev, :test], runtime: false},
+      {:ex_doc, "~> 0.24", only: :dev, runtime: false}
     ]
   end
 end
