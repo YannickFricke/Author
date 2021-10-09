@@ -33,11 +33,14 @@ ci:
 clean-build:
 	npx rimraf ./_build/
 
+clean-docs:
+	npx rimraf ./doc/
+
 clean-deps:
 	npx rimraf ./deps/
 	npx rimraf ./node_modules/
 
-clean: clean-build clean-deps
+clean: clean-build clean-docs clean-deps
 
 watch:
 	npx nodemon $(base_nodemon_opts) --exec "make clearscreen run"
@@ -72,5 +75,6 @@ watch-inspect:
 		watch-format \
 		ci \
 		clean \
+		clean-docs \
 		clean-build \
 		clean-deps
