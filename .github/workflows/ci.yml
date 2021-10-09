@@ -21,4 +21,4 @@ jobs:
               with:
                   otp-version: 24
                   elixir-version: 1.12.2
-            - run: make install test inspect
+            - run: make ci

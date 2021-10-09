@@ -26,6 +26,10 @@ install:
 	$(mix_executable) do deps.get, deps.compile
 	npm install
 
+ci:
+	npm i -g npm
+	make install test inspect
+
 clean-build:
 	npx rimraf ./_build/
 
@@ -66,6 +70,7 @@ watch-inspect:
 		watch-test \
 		watch-docs \
 		watch-format \
+		ci \
 		clean \
 		clean-build \
 		clean-deps
