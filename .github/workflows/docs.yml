@@ -21,8 +21,7 @@ jobs:
               with:
                   otp-version: 24
                   elixir-version: 1.12.2
-            - run: mix do deps.get, deps.compile
-            - run: mix docs
+            - run: make install docs
             - uses: peaceiris/actions-gh-pages@v3
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
