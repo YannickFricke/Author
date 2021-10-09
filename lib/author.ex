@@ -23,10 +23,13 @@ defmodule Author do
   ## Installation
 
   When available in [hex](https://hexdocs.pm/author) the package can be installed with:
+
   ```elixir
-  def deps(), do: [
-    {:author, "~> 0.0.0"}
-  ]
+  defp deps() do
+    [
+      {:author, "~> 0.0.0"}
+    ]
+  end
   ```
 
   ## Usage
