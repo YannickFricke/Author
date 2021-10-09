@@ -13,6 +13,9 @@ debug:
 test:
 	$(mix_executable) test
 
+docs:
+	$(mix_executable) docs
+
 format:
 	$(mix_executable) format
 
@@ -41,10 +44,28 @@ watch-debug:
 watch-test:
 	npx nodemon $(base_nodemon_opts) -w ./test/ --exec "make clearscreen test"
 
+watch-docs:
+	npx nodemon $(base_nodemon_opts) --exec "make clearscreen docs"
+
 watch-format:
 	npx nodemon $(base_nodemon_opts) -w ./.formatter.exs --exec "make clearscreen format"
 
 watch-inspect:
 	npx nodemon $(base_nodemon_opts) -w ./test/ --exec "make clearscreen inspect"
 
-.PHONY: clearscreen run debug test format inspect install watch watch-debug watch-test watch-format clean clean-build clean-deps
+.PHONY: clearscreen \
+		run \
+		debug \
+		test \
+		docs \
+		format \
+		inspect \
+		install \
+		watch \
+		watch-debug \
+		watch-test \
+		watch-docs \
+		watch-format \
+		clean \
+		clean-build \
+		clean-deps
