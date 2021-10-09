@@ -1,0 +1,24 @@
+on:
+    push:
+        branches:
+            - develop
+
+jobs:
+    ci:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/cache@v2
+              with:
+                  path: |
+                      deps
+                      _build
+                      node_modules
+                  key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}-node-${{ hashFiles('**/package-lock.json') }}
+                  restore-keys: |
+                      ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}-node-${{ hashFiles('**/package-lock.json') }}
+            - uses: erlef/setup-beam@v1
+              with:
+                  otp-version: 24
+                  elixir-version: 1.12.2
+            - run: make install test inspect
