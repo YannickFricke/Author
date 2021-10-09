@@ -8,6 +8,14 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
+            - uses: actions/cache@v2
+              with:
+                  path: |
+                      deps
+                      _build
+                  key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
+                  restore-keys: |
+                      ${{ runner.os }}-mix-
             - uses: erlef/setup-beam@v1
               with:
                   otp-version: 24
