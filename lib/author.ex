@@ -31,10 +31,10 @@ defmodule Author do
 
   ## Usage
 
+  <!-- TODO: Add "Usage" chapter -->
+
   ## License
 
   `Author` is licensed under the MIT license.
   """
-
-  # TODO: Add "Usage" chapter
 end
