@@ -13,9 +13,10 @@ jobs:
                   path: |
                       deps
                       _build
-                  key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
+                      node_modules
+                  key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}-node-${{ hashFiles('**/package-lock.json') }}
                   restore-keys: |
-                      ${{ runner.os }}-mix-
+                      ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}-node-${{ hashFiles('**/package-lock.json') }}
             - uses: erlef/setup-beam@v1
               with:
                   otp-version: 24
