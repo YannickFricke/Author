@@ -22,6 +22,7 @@ defmodule Author.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
+      {:type_check, "~> 0.8.0"},
       {:credo, "~> 1.5", only: [:dev, :test], runtime: false}
     ]
   end
